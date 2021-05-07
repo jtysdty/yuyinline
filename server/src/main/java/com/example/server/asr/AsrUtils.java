@@ -18,6 +18,7 @@ import com.alibaba.nls.client.protocol.asr.SpeechTranscriberResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -132,7 +133,7 @@ public class AsrUtils {
         return (dataSize * 10 * 8000) / (160 * sampleRate);
     }
 
-    public String process(String filepath) {
+    public String process(byte[] filepath) {
         SpeechTranscriber transcriber = null;
         try {
             //创建实例、建立连接。
@@ -174,8 +175,9 @@ public class AsrUtils {
             //此方法将以上参数设置序列化为JSON发送给服务端，并等待服务端确认。
             transcriber.start();
 
-            File file = new File(filepath);
-            FileInputStream fis = new FileInputStream(file);
+            //File file = new File(filepath);
+            //FileInputStream fis = new FileInputStream(file);
+            ByteArrayInputStream fis = new ByteArrayInputStream(filepath);
             byte[] b = new byte[3200];
             int len;
             while ((len = fis.read(b)) > 0) {
@@ -230,7 +232,7 @@ public class AsrUtils {
         //本案例使用本地文件模拟发送实时流数据。您在实际使用时，可以实时采集或接收语音流并发送到ASR服务端。
         String filepath = "nls-sample-16k.wav";
         AsrUtils demo = new AsrUtils(appKey, id, secret, url);
-        demo.process(filepath);
+        //demo.process(filepath);
         demo.shutdown();
     }
 
