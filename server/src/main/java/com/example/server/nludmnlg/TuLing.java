@@ -19,7 +19,7 @@ import java.net.URLEncoder;
 public class TuLing {
     public static String getFeedBack(String input) throws IOException{
 
-        String APIKEY = "376256f5e2b4417eba49109b0d78d835";
+        String APIKEY = "自己的apikey";
 
         String question = input;//这是上传给云机器人的问题
         //String INFO = URLEncoder.encode("北京今日天气", "utf-8");
