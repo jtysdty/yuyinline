@@ -16,8 +16,8 @@ public class AsrHandler2 extends Handler{
     public void doHandler(RecodeContext recodeContext) throws IOException {
         try{
 
-            String appKey = "H44rSxw8EyOL3qo0";
-            String token = "60fb9a7b704b462f86050a9aeaead896";
+            String appKey = "自己的appkey";
+            String token = "自己的token";
 
             SpeechTranscriberWithMicrophoneDemo demo = new SpeechTranscriberWithMicrophoneDemo(appKey, token);
             demo.process(recodeContext,this);
