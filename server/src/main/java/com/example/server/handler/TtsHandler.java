@@ -16,9 +16,9 @@ public class TtsHandler extends Handler{
     @Override
     public void doHandler(RecodeContext recodeContext) throws IOException {
         try {
-            String appKey = "H44rSxw8EyOL3qo0";
-            String id = "LTAI5tMmQyQBi2he4QbeHdo1";
-            String secret = "WmV8XDqVE98GC7Hph3X9uhn7geTROO";
+            String appKey = "自己的appkey";
+            String id = "自己的id";
+            String secret = "自己的secret";
             String url = "wss://nls-gateway.cn-shanghai.aliyuncs.com/ws/v1";
             //默认值：wss://nls-gateway.cn-shanghai.aliyuncs.com/ws/v1
             AliTextToSpeech demo = new AliTextToSpeech(appKey, id, secret, url);
